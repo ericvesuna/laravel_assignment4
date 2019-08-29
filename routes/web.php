@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/templates', function () {
+	return view('pages.create_category');
+	});
