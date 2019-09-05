@@ -37,6 +37,10 @@ Route::get('edit_category', 'CategoryController@edit')->name('edit_category');
 Route::post('update_category/{id}', 'CategoryController@update')->name('update_category');
 
 
-Route::get('createproduct', function () {
-	return view('pages.create_product');
-	});
+Route::post('insert_product','ProductController@store')->name('insert_product');
+
+Route::get('edit_product','ProductController@edit')->name('edit_product');
+
+Route::post('update_product/{id}','ProductController@update')->name('update_product');
+
+Route::get('createproduct','ProductController@category_list');
