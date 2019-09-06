@@ -21,9 +21,7 @@ Route::get('/createcategory', function () {
 	return view('pages.create_category');
 	});
 
-Route::get('/productlist', function () {
-	return view('pages.list_product');
-	});
+Route::get('/productlist', 'ProductController@index')->name('productlist'); 
 
 
 Route::post('add_category', 'CategoryController@store')->name('add_category');
@@ -44,3 +42,7 @@ Route::get('edit_product','ProductController@edit')->name('edit_product');
 Route::post('update_product/{id}','ProductController@update')->name('update_product');
 
 Route::get('createproduct','ProductController@category_list');
+
+Route::get('single_delete_product','ProductController@destroy')->name('single_delete_product');
+
+Route::post('multiple_delete_product','ProductController@destroy_all')->name('multiple_delete_product');
