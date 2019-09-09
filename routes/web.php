@@ -15,14 +15,9 @@
  return view('pages.select');
 });
 
-Route::get('/categorylist', 'CategoryController@index')->name('categorylist');
+Route::get('/categorylist', 'CategoryController@show')->name('categorylist');
 
-Route::get('/createcategory', function () {
-	return view('pages.create_category');
-	});
-
-Route::get('/productlist', 'ProductController@index')->name('productlist'); 
-
+Route::get('/createcategory', 'CategoryController@create')->name('createcategory');
 
 Route::post('add_category', 'CategoryController@store')->name('add_category');
 
@@ -35,13 +30,16 @@ Route::get('edit_category', 'CategoryController@edit')->name('edit_category');
 Route::post('update_category/{id}', 'CategoryController@update')->name('update_category');
 
 
+
+Route::get('/productlist', 'ProductController@show')->name('productlist'); 
+
+Route::get('/createproduct','ProductController@create')->name('createproduct');
+
 Route::post('insert_product','ProductController@store')->name('insert_product');
 
 Route::get('edit_product','ProductController@edit')->name('edit_product');
 
 Route::post('update_product/{id}','ProductController@update')->name('update_product');
-
-Route::get('createproduct','ProductController@category_list');
 
 Route::get('single_delete_product','ProductController@destroy')->name('single_delete_product');
 

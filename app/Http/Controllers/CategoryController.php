@@ -20,11 +20,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::orderBy('id')->paginate(3);
-
-
-        return view('pages.list_category',compact('category'));
-
+       
     }
 
     /**
@@ -34,7 +30,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.create_category');
     }
 
     /**
@@ -76,9 +72,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $category = Category::orderBy('id')->paginate(3);
+        return view('pages.list_category',compact('category'));
     }
 
     /**

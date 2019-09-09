@@ -43,7 +43,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories=Category::all(); 
+        return view('pages.create_product',compact('categories'));
     }
 
     /**
@@ -91,9 +92,16 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $products = Product::with('category')->paginate(3);
+        # $categoryName = "electronics";
+        # $prod=Product::whereHas('category', function($q) use($categoryName){
+        #     $q->where('category_name',$categoryName);
+        #     })->get();
+     
+        # dd($cat);
+        return view('pages.list_product',compact('products'));
     }
 
     /**
@@ -216,11 +224,4 @@ class ProductController extends Controller
  
     }
 
-
-
-    public function category_list()
-     {
-        $categories=Category::all(); 
-        return view('pages.create_product',compact('categories'));
-     }
 }

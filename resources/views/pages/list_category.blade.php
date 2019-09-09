@@ -52,7 +52,7 @@
 				 	<input type="submit" class="submit" value="submit">
 				 </div>
 					</li>-->
-					<li><a href="{{ url('/createcategory') }}">Create Category</a></li>
+					<li><a href="{{ route('createcategory') }}">Create Category</a></li>
 					<li><button type="submit" name="multiple_delete" style="background-color:#a5cf3c;height:53px;width:125px;border-radius: 6px;text-align: center;color: white;border:none;margin-right: 35%;font-size: 14px;">Delete </button></li>
 				</ul>
 			</div>
