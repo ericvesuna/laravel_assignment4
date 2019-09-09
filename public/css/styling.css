@@ -1,0 +1,31 @@
+.submitbt{
+	background-color:#a5cf3c;
+	height:55px;width:235px;
+	border-radius: 6px;
+	text-align: center;
+	color: white;
+	overflow: visible;
+	border:none;margin-left: 35%;
+	font-size: 14px;
+}
+
+#deletebtn{
+	background-color:#a5cf3c;
+	height:55px;width:45px;
+	border-radius: 6px;
+	text-align: center;
+	color: white;
+	overflow: visible;
+	border:none;margin-left: 35%;
+	font-size: 14px;
+}
+
+.error {
+	color: red !important;
+}
+
+.required:after{
+  	content:'*';
+  	color:red;
+  	padding-left:5px;
+}
